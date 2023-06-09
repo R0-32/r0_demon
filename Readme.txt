@@ -1,5 +1,3 @@
-С
-
 ## Логи созданий.
 # Virtual
 	pip install virtualenv
