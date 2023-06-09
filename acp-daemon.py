@@ -101,6 +101,7 @@ while True:
                 print("# Авто адд .")  # Вывод комментария
                 repo.index.add(file_path)  # Добавление файла в индекс
 
+                commit_message = "# Auto commit: " + str(datetime.datetime.now())  # Формирование сообщения коммита
                 repo.index.commit(commit_message, author=author, committer=committer)  # Создание коммита
                 print(commit_message)  # Вывод комментария
 
