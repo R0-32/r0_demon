@@ -4,12 +4,12 @@ This repository contains the source code and instructions for the ACP-Daemon, a 
 
 ## Table of Contents
 
-    1. [Introduction](##Introduction)
+    1. [Introduction](#Introduction)
     2. [Installation](#Installation)
     3. [Usage](#Usage)
     4. [Logs of Creation](#Logs of Creation)
 
-## Introduction
+## Introduction {#Introduction}
 
 ACP-Daemon is a Python script designed to automate Git repository tracking and commits. It periodically monitors changes in a specified directory and automatically adds, commits, and pushes the changes to a remote Git repository. The script uses the git and notify2 libraries to interact with Git and provide desktop notifications for detected changes.
 Installation
