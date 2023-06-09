@@ -14,6 +14,7 @@ https://python-scripts.com/virtualenv#1
 	virtualenv myenv
 	
 #скрипты activate в папке bin. Эти скрипты используются для настройки вашей оболочки для использования исполняемого файла среды Python и его сайтовых пакетов по умолчанию. Чтобы использовать эти пакеты (или ресурсы) среды в изоляции, вам нужно «активировать» их. Чтобы сделать это, просто запустите:
+
 	source myenv/bin/activate
 		deactivate
 
@@ -23,3 +24,10 @@ https://python-scripts.com/virtualenv#1
 		pip install dbus-python
 pip install notify2
 sudo pip install notify2
+
+
+# Компиляция
+Дебиан
+	pip install pyinstaller
+	pip install pyinstaller-linux
+	pyinstaller --onefile acp-daemon.py
