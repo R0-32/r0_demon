@@ -69,7 +69,7 @@ except git.exc.InvalidGitRepositoryError:
 print("Добавляем все файлы в индекс")
 repo.git.add("--all")
 
-print("# Создаем коммит commit_message, author=author, committer=committer")
+print("# Создаем коммит ")
 author = git.Actor(name, email)
 committer = author
 commit_message = "Automatic commit: " + str(datetime.datetime.now())
@@ -86,6 +86,12 @@ remote.push(refspec=f"refs/heads/{current_branch}")
 
 print("# Инициализация модуля оповещений")
 notify2.init("Git Notifier")
+
+print("# Отслеживание изменений в директории")
+while True:
+    user_input = input("Введите команду (close для завершения): ")
+    if user_input == "close":
+        break
 
 for root, dirs, files in os.walk(repo_path):
     for file in files:
@@ -104,10 +110,6 @@ for root, dirs, files in os.walk(repo_path):
             notification = notify2.Notification("Git Changes", "Изменения в репозитории Git обнаружены.")
             notification.show()
 
-print("# Отслеживание изменений в директории")
-while True:
-    user_input = input("Введите команду (close для завершения): ")
-    if user_input == "close":
-        break
+
 
 print("Скрипт успешно выполнен.")
