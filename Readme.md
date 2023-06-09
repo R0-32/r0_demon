@@ -28,7 +28,7 @@ sudo apt-get install python3-venv
 virtualenv myenv
 ```
 
-## <a id="activ">Activate the virtual environment:</a>
+## Activate the virtual environment:
 
 ```bash
 source myenv/bin/activate
@@ -40,7 +40,7 @@ pip install notify2
 pip install dbus-python
 ```
 
-## <a id="usage">Usage</a>
+## Usage
 
 To run the ACP-Daemon script, follow these steps:
 
@@ -101,7 +101,7 @@ sudo pip install notify2
 sudo pip install dbus-python
 ```
 
-## <a id="compilation">Compilation</a>
+## Compilation
 
 To compile the ACP-Daemon script, follow these steps:
 
