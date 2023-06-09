@@ -31,3 +31,4 @@ sudo pip install notify2
 	pip install pyinstaller
 	pip install pyinstaller-linux
 	pyinstaller --onefile acp-daemon.py
+	cd /home/r0-bl/Downloads/r0_demon/dist/acp-daemon
