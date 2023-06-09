@@ -81,7 +81,8 @@ if not remote.exists():
     remote = repo.create_remote("origin", url)
 
 print("# Пушим изменения в репозиторий")
-remote.push(refspec="refs/heads/master")
+current_branch = repo.head.reference.name
+remote.push(refspec=f"refs/heads/{current_branch}")
 
 print("# Инициализация модуля оповещений")
 notify2.init("Git Notifier")
