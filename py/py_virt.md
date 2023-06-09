@@ -10,11 +10,9 @@ https://python-scripts.com/virtualenv#1
 
 #Создание новой виртуальной среды внутри каталога
 	python3 -m venv env
-	?
 	virtualenv myenv
 
 #скрипты activate в папке bin. Эти скрипты используются для настройки вашей оболочки для использования исполняемого файла среды Python и его сайтовых пакетов по умолчанию. Чтобы использовать эти пакеты (или ресурсы) среды в изоляции, вам нужно «активировать» их. Чтобы сделать это, просто запустите:
-
 	source myenv/bin/activate
 		deactivate
 
@@ -24,7 +22,7 @@ https://python-scripts.com/virtualenv#1
 	sudo pip install dbus-python
 
 # Компиляция
-Дебиан
+Дебиан:
 	pip install pyinstaller
 	pip install pyinstaller-linux
 	pyinstaller --onefile acp-daemon.py
