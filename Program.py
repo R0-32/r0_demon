@@ -5,7 +5,7 @@ import configparser
 import notify2
 
 def extract_git_config(directory):
-    git_config_path = os.path.join(directory, '.git', 'config')
+    git_config_path = os.path.join(directory, '.git' , '.gitconfig')
 
     if os.path.exists(git_config_path):
         config = configparser.ConfigParser()
@@ -21,10 +21,10 @@ def extract_git_config(directory):
 
     return None, None, None
 
-# Запрос директории для отслеживания
+print("Запрос директории для отслеживания")
 directory = os.getcwd()
 
-# Извлечение информации из файла конфигурации Git
+print("# Извлечение информации из файла конфигурации Git")
 name, email, url = extract_git_config(directory)
 
 if name is None or email is None or url is None:
@@ -38,30 +38,29 @@ repo_path = os.getcwd()
 
 try:
     repo = git.Repo(repo_path)
-    # Репозиторий уже существует, можно продолжить работу
+    print("# Репозиторий уже существует, можно продолжить работу")
 except git.exc.InvalidGitRepositoryError:
-    # Репозиторий не существует, инициализируем его
-    repo = git.Repo.init(repo_path)
+    print("# Репозиторий не существует, инициализируй, его")
 
-# Добавляем все файлы в индекс
+print("Добавляем все файлы в индекс")
 repo.git.add("--all")
 
-# Создаем коммит
+print("# Создаем коммит")
 author = git.Actor(name, email)
 committer = author
 commit_message = "Automatic commit: " + str(datetime.datetime.now())
 repo.index.commit(commit_message, author=author, committer=committer)
 
-# Создаем удаленную ссылку на репозиторий
+print("# Создаем удаленную ссылку на репозиторий")
 remote = repo.create_remote("origin", url)
 
-# Пушим изменения в репозиторий
+print("# Пушим изменения в репозиторий")
 remote.push(refspec="refs/heads/master")
 
-# Инициализация модуля оповещений
+print("# Инициализация модуля оповещений")
 notify2.init("Git Notifier")
 
-# Отслеживание изменений в директории
+print("# Отслеживание изменений в директории")
 for root, dirs, files in os.walk(repo_path):
     for file in files:
         file_path = os.path.join(root, file)
