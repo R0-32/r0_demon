@@ -88,10 +88,10 @@ print("# Инициализация модуля оповещений")
 notify2.init("Git Notifier")
 
 print("# Отслеживание изменений в директории")
-while True:
-    user_input = input("Введите команду (close для завершения): ")
-    if user_input == "close":
-        break
+# while True:
+#     user_input = input("Введите команду (close для завершения): ")
+#     if user_input == "close":
+#         break
 
 for root, dirs, files in os.walk(repo_path):
     for file in files:
@@ -99,11 +99,12 @@ for root, dirs, files in os.walk(repo_path):
         if repo.is_dirty(path=file_path):
             # Добавляем измененный файл в индекс
             print("Добавляем все файлы в индекс")
-            repo.git.add("--all")
-            #repo.index.add(file_path)
+            #repo.git.add("--all")
+            repo.index.add(file_path)
 
             print("# Авто коммит ")
-            commit_message = "Automatic commit: " + str(datetime.datetime.now())
+            repo.index.commit(commit_message, author=author, committer=committer)
+            #commit_message = "Automatic commit: " + str(datetime.datetime.now())
 
             # Пушим изменения в репозиторий
             remote.push(refspec=f"refs/heads/{current_branch}")
@@ -111,7 +112,5 @@ for root, dirs, files in os.walk(repo_path):
             # Отправляем оповещение о появлении изменений
             notification = notify2.Notification("Git Changes", "Изменения в репозитории Git обнаружены.")
             notification.show()
-
-
 
 print("Скрипт успешно выполнен.")
