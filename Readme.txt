@@ -1,5 +1,6 @@
-Логи созданий.
-1. 
+С
+
+## Логи созданий.
 # Virtual
 	pip install virtualenv
 	export PATH="$PATH:/home/r0-bl/.local/bin"
@@ -21,8 +22,6 @@
 	pip install pyinstaller
 	pip install pyinstaller-linux
 	pyinstaller --onefile acp-daemon.py
-	/home/r0-bl/Downloads/r0_demon/dist/acp-daemon
-	
-2. 
-/dist/acp-daemon
+	# Запуск
+        /home/r0-bl/Downloads/r0_demon/dist/acp-daemon
 
