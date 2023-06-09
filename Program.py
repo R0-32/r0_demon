@@ -94,15 +94,19 @@ while True:
             file_path = os.path.join(root, file)
             if repo.is_dirty(path=file_path):
                 print("авто адд .")
-                #repo.git.add("--all")
                 repo.index.add(file_path)
+                notification = notify2.Notification("Git Changes", "авто адд .")
+                notification.show()
 
                 print("# Авто коммит ")
                 repo.index.commit(commit_message, author=author, committer=committer)
-                #commit_message = "Automatic commit: " + str(datetime.datetime.now())
+                notification = notify2.Notification("Git Changes", "авто коммит")
+                notification.show()
 
                 print("# Авто пуш ")
                 remote.push(refspec=f"refs/heads/{current_branch}")
+                notification = notify2.Notification("Git Changes", "авто пуш ")
+                notification.show()
 
                 print("# Отслеживание изменений в директории")
                 
