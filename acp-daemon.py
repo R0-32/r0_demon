@@ -101,8 +101,8 @@ while True:
                 print("# Авто адд .")  # Вывод комментария
                 repo.index.add(file_path)  # Добавление файла в индекс
 
-                print("# Авто коммит")  # Вывод комментария
                 repo.index.commit(commit_message, author=author, committer=committer)  # Создание коммита
+                print(commit_message)  # Вывод комментария
 
                 print("# Авто пуш")  # Вывод комментария
                 remote.push(refspec=f"refs/heads/{current_branch}")  # Отправка изменений в удаленный репозиторий
