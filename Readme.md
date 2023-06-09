@@ -4,7 +4,8 @@ This repository contains the source code and instructions for the ACP-Daemon, a 
 
 ## Table of Contents
 
-    1. [Introduction](#introduction)
+    1. 
+    [Introduction](#introduction)
     2. [Activate the virtual environment](#activ)
     3. [Usage](#usage)
     4. [Compilation](#compilation)
