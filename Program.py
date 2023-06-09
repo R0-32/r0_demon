@@ -98,13 +98,15 @@ for root, dirs, files in os.walk(repo_path):
         file_path = os.path.join(root, file)
         if repo.is_dirty(path=file_path):
             # Добавляем измененный файл в индекс
-            repo.index.add(file_path)
+            print("Добавляем все файлы в индекс")
+            repo.git.add("--all")
+            #repo.index.add(file_path)
 
-            # Создаем коммит
-            repo.index.commit(commit_message, author=author, committer=committer)
+            print("# Авто коммит ")
+            commit_message = "Automatic commit: " + str(datetime.datetime.now())
 
             # Пушим изменения в репозиторий
-            remote.push(refspec="refs/heads/master")
+            remote.push(refspec=f"refs/heads/{current_branch}")
 
             # Отправляем оповещение о появлении изменений
             notification = notify2.Notification("Git Changes", "Изменения в репозитории Git обнаружены.")
