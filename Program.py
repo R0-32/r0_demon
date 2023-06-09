@@ -90,6 +90,8 @@ notify2.init("Git Notifier")
 print("# Отслеживание изменений в директории")
 changed_files = set()
 
+notification = notify2.Notification("Git Changes", "")
+
 while True:
     for root, dirs, files in os.walk(repo_path):
         for file in files:
@@ -98,7 +100,7 @@ while True:
                 changed_files.add(file_path)
                 print("# Авто адд .")
                 repo.index.add(file_path)
-    
+
     if changed_files:
         print("# Авто коммит ")
         repo.index.commit(commit_message, author=author, committer=committer)
@@ -107,7 +109,7 @@ while True:
         remote.push(refspec=f"refs/heads/{current_branch}")
 
         print("# Изменения в репозитории Git обнаружены.")
-        notification = notify2.Notification("Git Changes", "Изменения в репозитории Git обнаружены.")
+        notification.update("Git Changes", "Изменения в репозитории Git обнаружены.")
         notification.show()
 
     changed_files.clear()
