@@ -96,7 +96,7 @@ while True:
             file_path = os.path.join(root, file)
             if repo.is_dirty(path=file_path) and file_path not in changed_files:
                 changed_files.add(file_path)
-                print("авто адд .")
+                print("# Авто адд .")
                 repo.index.add(file_path)
     
     if changed_files:
