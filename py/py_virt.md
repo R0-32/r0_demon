@@ -12,7 +12,7 @@ https://python-scripts.com/virtualenv#1
 	python3 -m venv env
 	?
 	virtualenv myenv
-	
+
 #скрипты activate в папке bin. Эти скрипты используются для настройки вашей оболочки для использования исполняемого файла среды Python и его сайтовых пакетов по умолчанию. Чтобы использовать эти пакеты (или ресурсы) среды в изоляции, вам нужно «активировать» их. Чтобы сделать это, просто запустите:
 
 	source myenv/bin/activate
@@ -20,11 +20,8 @@ https://python-scripts.com/virtualenv#1
 
 # практика
 	virtualenv r0_demon-virt
-	pip install notify2
-		pip install dbus-python
-pip install notify2
-sudo pip install notify2
-
+	sudo pip install notify2
+	sudo pip install dbus-python
 
 # Компиляция
 Дебиан
