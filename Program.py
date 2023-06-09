@@ -88,6 +88,8 @@ print("# Инициализация модуля оповещений")
 notify2.init("Git Notifier")
 
 print("# Отслеживание изменений в директории")
+changed_files = set()
+
 while True:
     for root, dirs, files in os.walk(repo_path):
         for file in files:
