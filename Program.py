@@ -106,7 +106,7 @@ while True:
         print("# Авто пуш ")
         remote.push(refspec=f"refs/heads/{current_branch}")
 
-        print("# Отправляем оповещение о появлении изменений")
+        print("# Изменения в репозитории Git обнаружены.")
         notification = notify2.Notification("Git Changes", "Изменения в репозитории Git обнаружены.")
         notification.show()
 
