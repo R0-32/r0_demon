@@ -19,4 +19,5 @@ https://python-scripts.com/virtualenv#1
 
 # практика
 	virtualenv r0_demon-virt
-	
+	pip install notify2
+		pip install dbus-python

@@ -2,6 +2,7 @@ import os
 import git
 import datetime
 import configparser
+import notify2
 
 def extract_git_config(directory):
     git_config_path = os.path.join(directory, '.git', 'config')
@@ -20,9 +21,6 @@ def extract_git_config(directory):
 
     return None, None, None
 
-# Запрос токена
-#token = input("Введите токен GitHub: ")
-
 # Запрос директории для отслеживания
 directory = os.getcwd()
 
@@ -35,8 +33,6 @@ else:
     print("Имя: ", name)
     print("Email: ", email)
     print("URL репозитория: ", url)
-
-import git
 
 repo_path = os.getcwd()
 
@@ -51,17 +47,19 @@ except git.exc.InvalidGitRepositoryError:
 repo.git.add("--all")
 
 # Создаем коммит
-author = git.Actor("Your Name", "your-email@example.com")
+author = git.Actor(name, email)
 committer = author
 commit_message = "Automatic commit: " + str(datetime.datetime.now())
 repo.index.commit(commit_message, author=author, committer=committer)
 
 # Создаем удаленную ссылку на репозиторий
-remote_url = "https://github.com/your-username/your-repo.git"
-remote = repo.create_remote("origin", remote_url)
+remote = repo.create_remote("origin", url)
 
 # Пушим изменения в репозиторий
 remote.push(refspec="refs/heads/master")
+
+# Инициализация модуля оповещений
+notify2.init("Git Notifier")
 
 # Отслеживание изменений в директории
 for root, dirs, files in os.walk(repo_path):
@@ -76,5 +74,9 @@ for root, dirs, files in os.walk(repo_path):
 
             # Пушим изменения в репозиторий
             remote.push(refspec="refs/heads/master")
+
+            # Отправляем оповещение о появлении изменений
+            notification = notify2.Notification("Git Changes", "Изменения в репозитории Git обнаружены.")
+            notification.show()
 
 print("Скрипт успешно выполнен.")
