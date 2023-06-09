@@ -71,7 +71,7 @@ repo.git.add("--all")  # Добавление всех изменений в и�
 
 author = git.Actor(name, email)  # Создание объекта Actor для указания автора коммита
 committer = author  # Использование автора коммита в качестве коммитера
-commit_message = "Automatic commit: " + str(datetime.datetime.now())  # Формирование сообщения коммита
+commit_message = "Auto commit: " + str(datetime.datetime.now())  # Формирование сообщения коммита
 repo.index.commit(commit_message, author=author, committer=committer)  # Создание коммита
 print(commit_message)  # Вывод комментария
 
@@ -80,7 +80,7 @@ remote = repo.remote(name="origin")  # Инициализация объекта
 if not remote.exists():
     remote = repo.create_remote("origin", url)  # Создание удаленной ссылки на репозиторий
 
-print("# Пушим изменения в репозиторий")  # Вывод комментария
+print("# Push ")  # Вывод комментария
 current_branch = repo.head.reference.name  # Получение текущей ветки
 remote.push(refspec=f"refs/heads/{current_branch}")  # Отправка изменений в удаленный репозиторий
 
