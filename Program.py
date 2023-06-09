@@ -35,7 +35,7 @@ def extract_remote_origin_config(directory):
 
     return None
 
-print("# Запрос директории для отслеживания")
+print("Запрос директории для отслеживания")
 directory = os.getcwd()
 
 print("# Извлечение информации из файла конфигурации Git")
@@ -101,15 +101,14 @@ while True:
                 print("# Авто адд .")
                 repo.index.add(file_path)
 
-    if changed_files:
-        print("# Авто коммит ")
-        repo.index.commit(commit_message, author=author, committer=committer)
+                print("# Авто коммит ")
+                repo.index.commit(commit_message, author=author, committer=committer)
 
-        print("# Авто пуш ")
-        remote.push(refspec=f"refs/heads/{current_branch}")
+                print("# Авто пуш ")
+                remote.push(refspec=f"refs/heads/{current_branch}")
 
-        print("# Изменения в репозитории Git обнаружены.")
-        notification.update("Git Changes", "Изменения в репозитории Git обнаружены.")
-        notification.show()
+                print("# Изменения в репозитории Git обнаружены.")
+                notification.update("Git Changes", "Изменения в репозитории Git обнаружены.")
+                notification.show()
 
     changed_files.clear()
