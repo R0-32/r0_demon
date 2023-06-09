@@ -9,7 +9,7 @@ This repository contains the source code and instructions for the ACP-Daemon, a 
     3. [Usage](#usage)
     4. [Compilation](#compilation)
 
-## Introduction {#introduction}
+## <a id="introduction">Introduction</a>
 
 ACP-Daemon is a Python script designed to automate Git repository tracking and commits. It periodically monitors changes in a specified directory and automatically adds, commits, and pushes the changes to a remote Git repository. The script uses the git and notify2 libraries to interact with Git and provide desktop notifications for detected changes.
 Installation
@@ -28,7 +28,7 @@ sudo apt-get install python3-venv
 virtualenv myenv
 ```
 
-##    Activate the virtual environment:{#activ}
+## <a id="activ">Activate the virtual environment:</a>
 
 ```bash
 source myenv/bin/activate
