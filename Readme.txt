@@ -21,7 +21,7 @@
 	pip install pyinstaller
 	pip install pyinstaller-linux
 	pyinstaller --onefile acp-daemon.py
-	cd /home/r0-bl/Downloads/r0_demon/dist/acp-daemon
+	/home/r0-bl/Downloads/r0_demon/dist/acp-daemon
 	
 2. 
 /dist/acp-daemon
