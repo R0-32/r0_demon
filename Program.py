@@ -98,19 +98,16 @@ while True:
                 changed_files.add(file_path)
                 print("авто адд .")
                 repo.index.add(file_path)
+    
+    if changed_files:
+        print("# Авто коммит ")
+        repo.index.commit(commit_message, author=author, committer=committer)
 
-                print("# Авто коммит ")
-                repo.index.commit(commit_message, author=author, committer=committer)
-                notification = notify2.Notification("Git Changes", "авто коммит")
-                notification.show()
+        print("# Авто пуш ")
+        remote.push(refspec=f"refs/heads/{current_branch}")
 
-                print("# Авто пуш ")
-                remote.push(refspec=f"refs/heads/{current_branch}")
-                notification = notify2.Notification("Git Changes", "авто пуш ")
-                notification.show()
+        print("# Отправляем оповещение о появлении изменений")
+        notification = notify2.Notification("Git Changes", "Изменения в репозитории Git обнаружены.")
+        notification.show()
 
-                print("# Отслеживание изменений в директории")
-                
-                # Отправляем оповещение о появлении изменений
-                notification = notify2.Notification("Git Changes", "Изменения в репозитории Git обнаружены.")
-                notification.show()
+    changed_files.clear()
