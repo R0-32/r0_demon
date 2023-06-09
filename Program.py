@@ -97,6 +97,7 @@ while True:
             if repo.is_dirty(path=file_path):
                 print("авто адд .")
                 repo.index.add(file_path)
+
                 notification = notify2.Notification("Git Changes", "авто адд .")
                 notification.show()
 
