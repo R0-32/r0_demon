@@ -6,7 +6,7 @@ This repository contains the source code and instructions for the ACP-Daemon, a 
 
     1. [Introduction](#introduction)
     2. [Activate the virtual environment](#activ)
-    3. [Usage](#Usage)
+    3. [Usage](#usage)
     4. [Logs of Creation](#Logs of Creation)
 
 ## Introduction {#introduction}
@@ -40,7 +40,7 @@ pip install notify2
 pip install dbus-python
 ```
 
-## Usage
+## Usage{#usage}
 
 To run the ACP-Daemon script, follow these steps:
 
@@ -101,7 +101,7 @@ sudo pip install notify2
 sudo pip install dbus-python
 ```
 
-## Compilation
+## Compilation{#compilation}
 
 To compile the ACP-Daemon script, follow these steps:
 
