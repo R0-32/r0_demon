@@ -35,7 +35,7 @@ def extract_remote_origin_config(directory):
 
     return None
 
-print("Запрос директории для отслеживания")
+print("# Запрос директории для отслеживания")
 directory = os.getcwd()
 
 print("# Извлечение информации из файла конфигурации Git")
