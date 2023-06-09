@@ -88,11 +88,6 @@ print("# Инициализация модуля оповещений")
 notify2.init("Git Notifier")
 
 print("# Отслеживание изменений в директории")
-# while True:
-#     user_input = input("Введите команду (close для завершения): ")
-#     if user_input == "close":
-#         break
-
 for root, dirs, files in os.walk(repo_path):
     for file in files:
         file_path = os.path.join(root, file)
