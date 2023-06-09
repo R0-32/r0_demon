@@ -71,7 +71,7 @@ repo.git.add("--all")  # Добавление всех изменений в и�
 
 author = git.Actor(name, email)  # Создание объекта Actor для указания автора коммита
 committer = author  # Использование автора коммита в качестве коммитера
-commit_message = "Auto commit: " + str(datetime.datetime.now())  # Формирование сообщения коммита
+commit_message = "# Auto commit: " + str(datetime.datetime.now())  # Формирование сообщения коммита
 repo.index.commit(commit_message, author=author, committer=committer)  # Создание коммита
 print(commit_message)  # Вывод комментария
 
