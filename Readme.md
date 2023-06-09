@@ -40,7 +40,7 @@ pip install notify2
 pip install dbus-python
 ```
 
-## Usage{#usage}
+## <a id="usage">Usage</a>
 
 To run the ACP-Daemon script, follow these steps:
 
@@ -101,7 +101,7 @@ sudo pip install notify2
 sudo pip install dbus-python
 ```
 
-## Compilation{#compilation}
+## <a id="compilation">Compilation</a>
 
 To compile the ACP-Daemon script, follow these steps:
 
