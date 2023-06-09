@@ -61,7 +61,7 @@ remote_url = "https://github.com/your-username/your-repo.git"
 remote = repo.create_remote("origin", remote_url)
 
 # Пушим изменения в репозиторий
-remote.push(refspec="refs/heads/main")
+remote.push(refspec="refs/heads/master")
 
 # Отслеживание изменений в директории
 for root, dirs, files in os.walk(repo_path):
@@ -75,6 +75,6 @@ for root, dirs, files in os.walk(repo_path):
             repo.index.commit(commit_message, author=author, committer=committer)
 
             # Пушим изменения в репозиторий
-            remote.push(refspec="refs/heads/main")
+            remote.push(refspec="refs/heads/master")
 
 print("Скрипт успешно выполнен.")
