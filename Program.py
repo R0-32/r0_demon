@@ -94,12 +94,10 @@ while True:
     for root, dirs, files in os.walk(repo_path):
         for file in files:
             file_path = os.path.join(root, file)
-            if repo.is_dirty(path=file_path):
+            if repo.is_dirty(path=file_path) and file_path not in changed_files:
+                changed_files.add(file_path)
                 print("авто адд .")
                 repo.index.add(file_path)
-
-                notification = notify2.Notification("Git Changes", "авто адд .")
-                notification.show()
 
                 print("# Авто коммит ")
                 repo.index.commit(commit_message, author=author, committer=committer)
