@@ -66,14 +66,14 @@ except git.exc.InvalidGitRepositoryError:
     print("# Репозиторий не существует, инициализируйте его")
     exit()
 
-print("Git Add .")  # Вывод команды Git
+print("# Add .")  # Вывод команды Git
 repo.git.add("--all")  # Добавление всех изменений в индекс
 
-print("# Создаем коммит")  # Вывод комментария
 author = git.Actor(name, email)  # Создание объекта Actor для указания автора коммита
 committer = author  # Использование автора коммита в качестве коммитера
 commit_message = "Automatic commit: " + str(datetime.datetime.now())  # Формирование сообщения коммита
 repo.index.commit(commit_message, author=author, committer=committer)  # Создание коммита
+print(commit_message)  # Вывод комментария
 
 print("# Создаем удаленную ссылку на репозиторий")  # Вывод комментария
 remote = repo.remote(name="origin")  # Инициализация объекта Remote для удаленного репозитория
