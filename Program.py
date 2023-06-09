@@ -66,7 +66,7 @@ except git.exc.InvalidGitRepositoryError:
     print("# Репозиторий не существует, инициализируй, его")
     exit()
 
-print("Добавляем все файлы в индекс")
+print("Git Add .")
 repo.git.add("--all")
 
 print("# Создаем коммит ")
