@@ -1,12 +1,13 @@
-ACP-Daemon
+###ACP-Daemon
 
 This repository contains the source code and instructions for the ACP-Daemon, a Python script that automates Git repository tracking and commits.
+
 Table of Contents
 
-    Introduction
-    Installation
-    Usage
-    Logs of Creation
+    1. Introduction
+    2. Installation
+    3. Usage
+    4. Logs of Creation
 
 Introduction
 
