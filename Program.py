@@ -69,7 +69,7 @@ except git.exc.InvalidGitRepositoryError:
 print("Добавляем все файлы в индекс")
 repo.git.add("--all")
 
-print("# Создаем коммит")
+print("# Создаем коммит commit_message, author=author, committer=committer")
 author = git.Actor(name, email)
 committer = author
 commit_message = "Automatic commit: " + str(datetime.datetime.now())
