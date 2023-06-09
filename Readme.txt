@@ -19,26 +19,25 @@ To use the ACP-Daemon script, follow the steps below:
 
     Set up a Python virtual environment using virtualenv:
 
-bash
-
+```bash
 pip install virtualenv
 export PATH="$PATH:/home/r0-bl/.local/bin"
 mkdir python-virtual-environments && cd python-virtual-environments
 sudo apt-get install python3-venv
 virtualenv myenv
+```
 
     Activate the virtual environment:
 
-bash
-
+```bash
 source myenv/bin/activate
-
+```
     Install the required dependencies:
 
-bash
-
+```bash
 pip install notify2
 pip install dbus-python
+```
 
 Usage
 
@@ -48,15 +47,14 @@ To run the ACP-Daemon script, follow these steps:
 
     Make sure you are still in the Python virtual environment:
 
-bash
-
+```bash
 source myenv/bin/activate
-
+```
     Run the ACP-Daemon script:
 
-bash
-
+```bash
 python acp-daemon.py
+```
 
 The script will start monitoring the specified directory for changes and automatically add, commit, and push the changes to the configured Git repository.
 Logs of Creation
@@ -66,24 +64,23 @@ To create a virtual environment for Python, follow these steps:
 
     Install virtualenv using pip:
 
-bash
-
+```bash
 pip install virtualenv
-
+```
     Add the virtualenv executable to your PATH:
 
-bash
-
+```bash
 export PATH="$PATH:/home/r0-bl/.local/bin"
+```
 
 Creating a New Directory
 
 To create a new directory, use the following commands:
 
-bash
-
+```bash
 mkdir python-virtual-environments && cd python-virtual-environments
 sudo apt-get install python3-venv
+```
 
 Creating a New Virtual Environment
 
