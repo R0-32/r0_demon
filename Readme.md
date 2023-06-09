@@ -4,8 +4,8 @@ This repository contains the source code and instructions for the ACP-Daemon, a 
 
 ## Table of Contents
 
-    1. [Introduction](#Introduction)
-    2. [Installation](#Installation)
+    1. [Introduction](#introduction)
+    2. [Activate the virtual environment](#activ)
     3. [Usage](#Usage)
     4. [Logs of Creation](#Logs of Creation)
 
@@ -28,7 +28,7 @@ sudo apt-get install python3-venv
 virtualenv myenv
 ```
 
-##    Activate the virtual environment:
+##    Activate the virtual environment:{#activ}
 
 ```bash
 source myenv/bin/activate
